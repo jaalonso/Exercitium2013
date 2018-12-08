@@ -1,0 +1,416 @@
+% Exercitium2013.tex
+% Exercitium (curso 2013-14)
+% José A. Alonso Jiménez <jalonso@us.es>
+% Sevilla, 8 de diciembre de 2018
+% ======================================================================
+
+\documentclass[a4paper,12pt,twoside]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% § Paquetes adicionales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Configuración para XeLaTeX
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\defaultfontfeatures{Ligatures=TeX,Numbers=OldStyle}
+\setromanfont{DejaVu Sans}
+% \setsansfont{Arial}
+\setmonofont{DejaVu Sans Mono}[Scale={0.90}]
+
+% Notas: La lista de fuentes disponibles se obtiene con fc-list
+
+% \usepackage{ucs}
+% \usepackage[utf8]{inputenc}        % Acentos de UTF8
+\usepackage[spanish]{babel}        % Castellanización.
+% \usepackage[T1]{fontenc}           % Codificación T1 con European Computer
+%                                    % Modern.  
+% \usepackage{graphicx}
+% \usepackage{fancyvrb}              % Verbatim extendido
+% \usepackage{mathpazo}              % Fuentes semejante a palatino
+% \usepackage[scaled=.90]{helvet}
+% \usepackage{cmtt}
+% \renewcommand{\ttdefault}{cmtt}
+\usepackage{a4wide}
+\usepackage{minted}
+\usepackage{comment}
+
+\usepackage{titletoc}
+\dottedcontents{chapter}[0em]{}{9em}{1pc}
+% \dottedcontents{chapter}[<left>]{<above-code>}{<label width>}{<leader width>}
+
+\linespread{1.05}                  % Distancia entre líneas
+\setlength{\parindent}{2em}        % Indentación de comienzo de párrafo
+\setlength{\parskip}{1ex}          % Distancia entre párrafos
+% \deactivatetilden                  % Elima uso de ~ para la eñe
+\raggedbottom                      % No ajusta los espacios verticales.
+
+\usepackage[%
+  colorlinks=true,
+  urlcolor=blue,
+  % pdftex,
+  pdfauthor={José A. Alonso <jalonso@us.es>},%
+  pdftitle={Exercitium (curso 2013-14)},%
+  pdfstartview=FitH,%
+  bookmarks=false]{hyperref}      
+
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{4}
+
+\usepackage{tocstyle}
+\usetocstyle{KOMAlike}
+
+% \usepackage{tocloft}
+% \renewcommand\cftpartnumwidth{3cm}
+
+% \usepackage{minitoc}
+
+% \setlength\cftparskip{-2pt}
+% \setlength\cftbeforechapskip{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% § Cabeceras                                                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+
+\addtolength{\headheight}{\baselineskip}
+
+\pagestyle{fancy}
+
+\cfoot{}
+
+\fancyhead{}
+\fancyhead[RE]{\mdseries\sffamily Exercitium (2018--19)}
+\fancyhead[LO]{\mdseries\sffamily \nouppercase{\leftmark}}
+\fancyhead[LE,RO]{\mdseries\sffamily \thepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% § Definiciones
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input definiciones
+\def\mtctitle{Contenido}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% § Título
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{
+  {\LARGE Exercitium (curso 2013--14) \\
+  {\Large Ejercicios de programación funcional con Haskell }}}
+\author{\href{http://www.cs.us.es/~jalonso}
+        {\Large José A. Alonso Jiménez}}
+\date{\vfill \hrule \vspace*{2mm}
+  \begin{tabular}{l}
+      \href{http://www.cs.us.es/glc}
+           {Grupo de Lógica Computacional} \\
+      \href{http://www.cs.us.es}
+           {Dpto. de Ciencias de la Computación e Inteligencia Artificial} \\
+      \href{http://www.us.es}
+           {Universidad de Sevilla}  \\
+      Sevilla, 8 de diciembre de 2018
+  \end{tabular}\hfill\mbox{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% § Documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \includeonly{recusion_sobre_numeros_naturales}
+
+% \includexmp{licencia}
+
+\begin{document}
+% \dominitoc
+
+\maketitle
+\newpage
+
+\input{licenciaCC}
+\newpage
+
+\newpage
+
+\mbox{} \vspace*{2cm}
+\begin{flushright}
+\textit{Para Guiomar}
+\end{flushright}
+
+\newpage
+
+\tableofcontents
+\clearpage
+
+\renewcommand{\chaptername}{Ejercicio}
+
+\chapter*{Introducción}
+
+% \mbox{} \hspace*{1cm} 
+
+\begin{quote}
+  ``\textit{The chief goal of my work as an educator and author is to
+  help people learn to write beautiful programs.}''
+
+  (Donald Knuth en
+  \href{http://www.paulgraham.com/knuth.html}{Computer programming as an art})
+\end{quote}
+
+\vspace* {1cm}
+
+Este libro es una recopilación de las soluciones de los ejercicios
+propuestos en el blog
+\href{https://www.glc.us.es/~jalonso/exercitium}
+     {Exercitium}\
+     \footnote{\url{https://www.glc.us.es/~jalonso/exercitium}}
+durante el curso 2013--14.
+
+El principal objetivo de Exercitium es servir de complemento a la
+asignatura de
+\href{https://www.cs.us.es/~jalonso/cursos/i1m-13}
+     {Informática}\
+     \footnote{\url{https://www.cs.us.es/~jalonso/cursos/i1m-13}}
+de 1º del Grado en Matemáticas de la Universidad de Sevilla.
+
+Con los problemas de Exercitium, a diferencias de los de las
+\href{https://www.cs.us.es/~jalonso/cursos/i1m-13/ejercicios/ejercicios-I1M-2013.pdf}
+     {relaciones}\
+     \footnote{\url{https://www.cs.us.es/~jalonso/cursos/i1m-13/ejercicios/ejercicios-I1M-2013.pdf}},
+se pretende practicar con los conocimientos adquiridos durante todo el
+curso, mientras que con las relaciones están orientadas a los nuevos
+conocimientos.
+
+Habitualmente de cada ejercicio se muestra distintas soluciones y se
+compara sus eficiencias.
+
+La dinámica del blog es la siguiente: cada día, de lunes a viernes, se
+propone un ejercicio para que los alumnos escriban distintas soluciones
+en los comentarios. Pasado 7 días de la propuesta de cada ejercicio, se
+cierra los comentarios y se publica una selección de sus soluciones.
+
+Para conocer la cronología de los temas explicados se puede consultar el
+\href{https://www.glc.us.es/~jalonso/vestigium/category/curso/i1m/i1m2013}
+     {diario de clase}\
+     \footnote{\url{https://www.glc.us.es/~jalonso/vestigium/category/curso/i1m/i1m2013}}.
+
+El código del libro se encuentra en
+\href{https://github.com/jaalonso/Exercitium2018}
+     {GitHub}\
+     \footnote{\url{https://github.com/jaalonso/Exercitium2013}}
+
+\chapter{Iguales al siguiente}
+\entrada{Iguales_al_siguiente}
+
+\chapter{Ordenación por el máximo}
+\entrada{Ordenados_por_maximo}
+
+% \chapter{La bandera tricolor}
+% \entrada{Bandera_tricolor}
+% 
+% \chapter{Elementos minimales}
+% \entrada{ElementosMinimales}
+% 
+% \chapter{Mastermind}
+% \entrada{Mastermind}
+% 
+% \chapter{Primos consecutivos con media capicúa}
+% \entrada{Primos_consecutivos_con_media_capicua}
+% 
+% \chapter{Anagramas}
+% \entrada{Anagramas}
+% 
+% \chapter{Primos equidistantes}
+% \entrada{Primos_equidistantes}
+% 
+% \chapter{Suma si todos los valores son justos}
+% \entrada{Suma_si_todos_justos}
+% 
+% \chapter{Matrices de Toeplitz}
+% \entrada{Matriz_Toeplitz}
+% 
+% \chapter{Máximos locales}
+% \entrada{MaximosLocales}
+% 
+% \chapter{Lista cuadrada}
+% \entrada{Lista_cuadrada}
+% 
+% \chapter{Segmentos de elementos consecutivos}
+% \entrada{Segmentos_consecutivos}
+% 
+% \chapter{Valor de un polinomio mediante vectores}
+% \entrada{Valor_de_un_polinomio}
+% 
+% \chapter{Ramas de un árbol}
+% \entrada{Ramas_de_un_arbol}
+% 
+% \chapter{Alfabeto comenzado en un carácter}
+% \entrada{Alfabeto_desde}
+% 
+% \chapter{Numeración de ternas de naturales}
+% \entrada{Numeracion_de_ternas}
+% 
+% \chapter{Ordenación de estructuras}
+% \entrada{Ordenacion_de_estructuras}
+% 
+% \chapter{Emparejamiento binario}
+% \entrada{Emparejamiento_binario}
+% 
+% \chapter{Ampliación de columnas de una matriz}
+% \entrada{Amplia_columnas}
+% 
+% \chapter{Regiones en el plano}
+% \entrada{Regiones}
+% 
+% \chapter{Elemento más repetido}
+% \entrada{Mas_repetido}
+% 
+% \chapter{Número de pares de elementos adyacentes iguales}
+% \entrada{Pares_adyacentes_iguales}
+% 
+% \chapter{Mayor producto de las ramas de un árbol}
+% \entrada{Mayor_producto_de_las_ramas_de_un_arbol}
+% 
+% \chapter{Biparticiones de una lista}
+% \entrada{Biparticiones_de_una_lista}
+% 
+% \chapter{Trenzado de listas}
+% \entrada{Trenza}
+% 
+% \chapter{Números triangulares con n cifras distintas}
+% \entrada{Triangulares_con_cifras}
+% 
+% \chapter{Enumeración de árboles binarios}
+% \entrada{Enumera_arbol}
+% 
+% \chapter{Elementos con algún vecino menor}
+% \entrada{Algun_vecino_menor}
+% 
+% \chapter{Reiteración de una función}
+% \entrada{Reiteracion_de_funciones}
+%     
+% \chapter{Pim, Pam, Pum y divisibilidad}
+% \entrada{PimPamPum}
+% 
+% \chapter{Código de las alergias}
+% \entrada{Alergias}
+% 
+% \chapter{Índices de valores verdaderos}
+% \entrada{Indices_verdaderos}
+% 
+% \chapter{Descomposiciones triangulares}
+% \entrada{Descomposiciones_triangulares}
+% 
+% \chapter{Número de inversiones}
+% \entrada{Numero_de_inversiones}
+% 
+% \chapter{Sepación por posición}
+% \entrada{Separacion_por_posicion}
+% 
+% \chapter{Emparejamiento de árboles}
+% \entrada{EmparejamientoDeArboles}
+% 
+% \chapter{Eliminación de las ocurrencias unitarias}
+% \entrada{Elimina_unitarias}
+% 
+% \chapter{Ordenada cíclicamente}
+% \entrada{Ordenada_ciclicamente}
+% 
+% \chapter{Órbita prima}
+% \entrada{Orbita_prima}
+% 
+% \chapter{Divisores de un número con final dado}
+% \entrada{Divisores_con_final}
+% 
+% \chapter{Descomposiciones como sumas de n sumandos}
+% \entrada{Descomposiciones_con_n_sumandos}
+% 
+% \chapter{Selección hasta el primero que falla inclusive}
+% \entrada{Seleccion_con_fallo}
+% 
+% \chapter{Buscaminas}
+% \entrada{Buscaminas}
+% 
+% \chapter{Mayor sucesión del problema 3n+1}
+% \entrada{Mayor_sucesion_3n%2B1}
+% 
+% \chapter{Filtro booleano}
+% \entrada{Filtro_booleano}
+% 
+% \chapter{Entero positivo de la cadena}
+% \entrada{Entero_positivo_de_la_cadena}
+% 
+% \chapter{N gramas}
+% \entrada{n_gramas}
+% 
+% \chapter{Sopa de letras}
+% \entrada{Sopa_de_letras}
+% 
+% \chapter{Intercalación de n copias}
+% \entrada{Intercala_n_copias}
+% 
+% \chapter{Eliminación de n elementos}
+% \entrada{Elimina_n_elementos}
+% 
+% \chapter{Límite}
+% \entrada{Limite}
+% 
+% \chapter{Número de palabas que empiezan por mayúscula}
+% \entrada{Empiezan_con_mayuscula}
+% 
+% \chapter{Renombramiento de un árbol}
+% \entrada{Renombra_arbol}
+% 
+% \chapter{Divide si todos son múltiplos}
+% \entrada{Divide_si_todos_multiplos}
+% 
+% \chapter{Ventana deslizante}
+% \entrada{Ventana_deslizante}
+% 
+% \chapter{Representación de Zeckendorf}
+% \entrada{Representacion_de_Zeckendorf}
+% 
+% \chapter{Más cercano cumpliendo una propiedad}
+% \entrada{Mas_cercano_cumpliendo_la_propiedad}
+% 
+% \chapter{Código Morse}
+% \entrada{Codigo_Morse}
+% 
+% \chapter{Producto cartesiano de una familia de conjuntos}
+% \entrada{Producto_cartesiano}
+% 
+% \chapter{Todas tienen par}
+% \entrada{Todas_tienen_par}
+% 
+% \chapter{Sucesiones pucelanas}
+% \entrada{Sucesiones_pucelanas}
+% 
+% \chapter{Producto de matrices como listas de listas}
+% \entrada{Producto_de_matrices_como_listas_de_listas}
+% 
+% \chapter{Inserción en árboles binarios de búsqueda}
+% \entrada{Insercion_en_arboles_binarios_de_busqueda}
+% 
+% \chapter{Matriz permutación}
+% \entrada{Matriz_permutacion}
+% 
+% \chapter{Números con todos sus dígitos primos}
+% \entrada{Numeros_con_digitos_primos}
+% 
+% \chapter{Cadenas de ceros y unos}
+% \entrada{Cadenas0y1}
+% 
+% \chapter{Clausura de un conjunto respecto de una función}
+% \entrada{Clausura}
+% 
+% \chapter{Sustitución en una expresión}
+% \entrada{Sustitucion_en_una_expresion}
+% 
+% \chapter{Laberinto numérico}
+% \entrada{Laberinto_numerico}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+
