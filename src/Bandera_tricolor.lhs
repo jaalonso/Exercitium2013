@@ -22,7 +22,7 @@ constructores R, A y M correspondientes al rojo, amarillo y morado y la
 función
 \begin{descripcion}
    banderaTricolor :: [Color] -> [Color]
-\end{sesion}
+\end{descripcion}
 tal que (banderaTricolor xs) es la bandera tricolor formada con los
 elementos de xs. Por ejemplo,
 \begin{descripcion}
