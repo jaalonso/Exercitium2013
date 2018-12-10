@@ -1,6 +1,6 @@
 % Ordenados_por_maximo.hs
 % Ordenación por el máximo.
-% José A. Alonso Jiménez <jalonso@us.es>
+% José A. Alonso Jiménez 
 % Sevilla, 22 de Abril de 2014
 % ---------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ module Ordenados_por_maximo where
 \end{code}
 \end{comment}
 
-\section*{Ejercicio propuesto el 22--4--18}
+\section*{Ejercicio propuesto el 22 de Abril de 2014}
 
 Definir la función
 \begin{descripcion}

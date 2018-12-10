@@ -12,7 +12,7 @@ module Iguales_al_siguiente where
 \note{
 }
 
-\section*{Ejercicio propuesto el 21--4--14}
+\section*{Ejercicio propuesto el 21 de Abril de 2014}
 
 Definir la función
 \begin{descripcion}

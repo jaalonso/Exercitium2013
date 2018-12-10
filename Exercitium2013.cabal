@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 3c0d477dff86af575c0902d8156c32ba7d54e8697c4004e666a26cbda0dd423b
+-- hash: 7d5172f3c6a85ed32660409bdbf3175184e8b33bdde9607110e80a3c691e7e79
 
 name:           Exercitium2013
 version:        0.1.0.0
@@ -30,6 +30,7 @@ library
       Bandera_tricolor
       ElementosMinimales
       Iguales_al_siguiente
+      Mastermind
       Ordenados_por_maximo
   other-modules:
       Paths_Exercitium2013
@@ -50,6 +51,7 @@ test-suite spec
       Bandera_tricolor_Spec
       ElementosMinimales_Spec
       Iguales_al_siguiente_Spec
+      Mastermind_Spec
       Ordenados_por_maximo_Spec
       Paths_Exercitium2013
   hs-source-dirs:
