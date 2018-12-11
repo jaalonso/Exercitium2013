@@ -71,7 +71,12 @@ prop_igualesAlSiguiente_equiv xs =
   igualesAlSiguiente xs == igualesAlSiguiente5 xs &&
   igualesAlSiguiente xs == igualesAlSiguiente6 xs
 
+verifica_igualesAlSiguiente_equiv :: IO ()
+verifica_igualesAlSiguiente_equiv =
+  quickCheck prop_igualesAlSiguiente_equiv
+  
 -- La comprobación es
+--    λ> verifica_igualesAlSiguiente_equiv
 --    +++ OK, passed 100 tests.
 --    (0.07 secs, 9,911,528 bytes)
 \end{code}
