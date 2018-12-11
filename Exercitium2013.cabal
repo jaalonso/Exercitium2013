@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c933e236e231f1bc32db366585476fb7480d5b56735d385434dc7f81075412cf
+-- hash: c7075de92dc6ae9577f7fd5e66cc5fd949754a70f4d5ed4f0c1bee9f5fa89f78
 
 name:           Exercitium2013
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      Anagramas
       Bandera_tricolor
       ElementosMinimales
       Iguales_al_siguiente
@@ -50,6 +51,7 @@ test-suite spec
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Anagramas_Spec
       Bandera_tricolor_Spec
       ElementosMinimales_Spec
       Iguales_al_siguiente_Spec
