@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f182a322b159ddb7be44ed4ff47e397e5b4cf02ea683655180be3f66ed46d72f
+-- hash: 155eb5eb1d905291d2d2d78caaa02a475c7e99e446c9ac97ce4d53dd88a46293
 
 name:           Exercitium2013
 version:        0.1.0.0
@@ -35,6 +35,7 @@ library
       Ordenados_por_maximo
       Primos_consecutivos_con_media_capicua
       Primos_equidistantes
+      Suma_si_todos_justos
   other-modules:
       Paths_Exercitium2013
   hs-source-dirs:
