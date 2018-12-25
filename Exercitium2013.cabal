@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 155eb5eb1d905291d2d2d78caaa02a475c7e99e446c9ac97ce4d53dd88a46293
+-- hash: 5d94c997c3b874c18086e4ad0b48af730c05e64a6a89c7d6f5c07ce0a3f76533
 
 name:           Exercitium2013
 version:        0.1.0.0
@@ -32,6 +32,7 @@ library
       ElementosMinimales
       Iguales_al_siguiente
       Mastermind
+      Matriz_Toeplitz
       Ordenados_por_maximo
       Primos_consecutivos_con_media_capicua
       Primos_equidistantes
@@ -43,6 +44,7 @@ library
   ghc-options: -Wall -fno-warn-type-defaults
   build-depends:
       QuickCheck >=2.9.2
+    , array
     , base >=4.7 && <5
     , hspec
     , hspec-core
@@ -58,6 +60,7 @@ test-suite spec
       ElementosMinimales_Spec
       Iguales_al_siguiente_Spec
       Mastermind_Spec
+      Matriz_Toeplitz_Spec
       Ordenados_por_maximo_Spec
       Primos_consecutivos_con_media_capicua_Spec
       Primos_equidistantes_Spec
@@ -68,6 +71,7 @@ test-suite spec
   build-depends:
       Exercitium2013
     , QuickCheck >=2.9.2
+    , array
     , base
     , hspec
     , hspec-core
