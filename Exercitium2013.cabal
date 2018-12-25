@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c7075de92dc6ae9577f7fd5e66cc5fd949754a70f4d5ed4f0c1bee9f5fa89f78
+-- hash: f182a322b159ddb7be44ed4ff47e397e5b4cf02ea683655180be3f66ed46d72f
 
 name:           Exercitium2013
 version:        0.1.0.0
@@ -34,6 +34,7 @@ library
       Mastermind
       Ordenados_por_maximo
       Primos_consecutivos_con_media_capicua
+      Primos_equidistantes
   other-modules:
       Paths_Exercitium2013
   hs-source-dirs:
@@ -58,6 +59,7 @@ test-suite spec
       Mastermind_Spec
       Ordenados_por_maximo_Spec
       Primos_consecutivos_con_media_capicua_Spec
+      Primos_equidistantes_Spec
       Paths_Exercitium2013
   hs-source-dirs:
       test
