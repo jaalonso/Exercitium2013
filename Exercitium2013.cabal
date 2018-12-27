@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5d94c997c3b874c18086e4ad0b48af730c05e64a6a89c7d6f5c07ce0a3f76533
+-- hash: a6f3bee89d23232e09d9594fc8b5e05c699f58882abd46b68354dd0a37158a9e
 
 name:           Exercitium2013
 version:        0.1.0.0
@@ -31,8 +31,10 @@ library
       Bandera_tricolor
       ElementosMinimales
       Iguales_al_siguiente
+      Lista_cuadrada
       Mastermind
       Matriz_Toeplitz
+      MaximosLocales
       Ordenados_por_maximo
       Primos_consecutivos_con_media_capicua
       Primos_equidistantes
@@ -61,6 +63,7 @@ test-suite spec
       Iguales_al_siguiente_Spec
       Mastermind_Spec
       Matriz_Toeplitz_Spec
+      MaximosLocales_Spec
       Ordenados_por_maximo_Spec
       Primos_consecutivos_con_media_capicua_Spec
       Primos_equidistantes_Spec
