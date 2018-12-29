@@ -10,7 +10,7 @@ module ElementosMinimales where
 \end{code}
 \end{comment}
 
-\section*{Ejercicio propuesto el 24 de Abril de 2014}
+\section*{Enunciado}
 
 Definir la función
 \begin{descripcion}

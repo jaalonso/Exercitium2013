@@ -10,7 +10,7 @@ module Ordenados_por_maximo where
 \end{code}
 \end{comment}
 
-\section*{Ejercicio propuesto el 22 de Abril de 2014}
+\section*{Enunciado}
 
 Definir la función
 \begin{descripcion}

@@ -10,7 +10,7 @@ module Mastermind where
 \end{code}
 \end{comment}
 
-\section*{Ejercicio propuesto el 25 de Abril de 2014}
+\section*{Enunciado}
 
 El Mastermind es un juego que consiste en deducir un código
 numérico formado por una lista de números distintos. Cada vez que se

@@ -10,7 +10,7 @@ module Anagramas where
 \end{code}
 \end{comment}
 
-\section*{Ejercicio propuesto el 29 de Abril de 2014}
+\section*{Enunciado}
 
 Una palabra es una anagrama de otra si se puede obtener permutando sus
 letras. Por ejemplo, mora y roma son anagramas de amor.

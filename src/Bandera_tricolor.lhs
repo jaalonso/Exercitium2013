@@ -10,7 +10,7 @@ module Bandera_tricolor where
 \end{code}
 \end{comment}
 
-\section*{Ejercicio propuesto el 23 de Abril de 2014}
+\section*{Enunciado}
 
 El problema de la bandera tricolor consiste en lo siguiente: Dada un
 lista de objetos xs que pueden ser rojos, amarillos o morados, se pide

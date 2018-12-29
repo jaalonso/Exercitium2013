@@ -4,7 +4,7 @@
 % Sevilla, 8 de Mayo de 2014
 % ---------------------------------------------------------------------
 
-\section*{Ejercicio propuesto el 8 de Mayo de 2014}
+\section*{Enunciado}
 
 \begin{comment}
 \begin{code}

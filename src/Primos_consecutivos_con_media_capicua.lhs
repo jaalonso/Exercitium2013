@@ -10,7 +10,7 @@ module Primos_consecutivos_con_media_capicua where
 \end{code}
 \end{comment}
 
-\section*{Ejercicio propuesto el 28 de Abril de 2014}
+\section*{Enunciado}
 
 La pasada semana, Antonio Roldán publicó en
 \href{http://bit.ly/1mPSepM}{Twitter} la siguiente observación:
