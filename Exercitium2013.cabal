@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a6f3bee89d23232e09d9594fc8b5e05c699f58882abd46b68354dd0a37158a9e
+-- hash: f002398a552ea6e2e40baaa90c63ce56d713278409093d45927a262f47641a22
 
 name:           Exercitium2013
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      Alfabeto_desde
       Anagramas
       Bandera_tricolor
       ElementosMinimales
@@ -35,10 +36,15 @@ library
       Mastermind
       Matriz_Toeplitz
       MaximosLocales
+      Numeracion_de_ternas
+      Ordenacion_de_estructuras
       Ordenados_por_maximo
       Primos_consecutivos_con_media_capicua
       Primos_equidistantes
+      Ramas_de_un_arbol
+      Segmentos_consecutivos
       Suma_si_todos_justos
+      Valor_de_un_polinomio
   other-modules:
       Paths_Exercitium2013
   hs-source-dirs:
@@ -57,16 +63,21 @@ test-suite spec
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Alfabeto_desde_Spec
       Anagramas_Spec
       Bandera_tricolor_Spec
       ElementosMinimales_Spec
       Iguales_al_siguiente_Spec
+      Lista_cuadrada_Spec
       Mastermind_Spec
       Matriz_Toeplitz_Spec
       MaximosLocales_Spec
       Ordenados_por_maximo_Spec
       Primos_consecutivos_con_media_capicua_Spec
       Primos_equidistantes_Spec
+      Ramas_de_un_arbol_Spec
+      Segmentos_consecutivos_Spec
+      Valor_de_un_polinomio_Spec
       Paths_Exercitium2013
   hs-source-dirs:
       test
