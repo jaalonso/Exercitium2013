@@ -1,8 +1,10 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f002398a552ea6e2e40baaa90c63ce56d713278409093d45927a262f47641a22
+-- hash: c68f51ea055c9e3cf071b2b0e3f150414d713c62cd545d76914a600f66d92252
 
 name:           Exercitium2013
 version:        0.1.0.0
@@ -17,7 +19,6 @@ copyright:      Jose A. Alonso
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-cabal-version:  >= 1.10
 extra-source-files:
     README.org
 
@@ -27,23 +28,41 @@ source-repository head
 
 library
   exposed-modules:
+      Alergias
       Alfabeto_desde
+      Algun_vecino_menor
+      Amplia_columnas
       Anagramas
       Bandera_tricolor
+      Biparticiones_de_una_lista
+      Descomposiciones_triangulares
       ElementosMinimales
+      Emparejamiento_binario
+      Enumera_arbol
       Iguales_al_siguiente
+      Indices_verdaderos
       Lista_cuadrada
+      Mas_repetido
       Mastermind
       Matriz_Toeplitz
       MaximosLocales
+      Mayor_producto_de_las_ramas_de_un_arbol
       Numeracion_de_ternas
+      Numero_de_inversiones
       Ordenacion_de_estructuras
       Ordenados_por_maximo
+      Pares_adyacentes_iguales
+      PimPamPum
       Primos_consecutivos_con_media_capicua
       Primos_equidistantes
       Ramas_de_un_arbol
+      Regiones
+      Reiteracion_de_funciones
       Segmentos_consecutivos
+      Separacion_por_posicion
       Suma_si_todos_justos
+      Trenza
+      Triangulares_con_cifras
       Valor_de_un_polinomio
   other-modules:
       Paths_Exercitium2013
