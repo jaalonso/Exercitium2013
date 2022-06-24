@@ -1,6 +1,6 @@
 Recopilación de soluciones de los problemas propuestos en [[https://www.glc.us.es/~jalonso/exercitium/][Exercitium]]
 durante el curso 2013-14.
-
+ 
 El libro es [[https://github.com/jaalonso/Exercitium2013/blob/master/texto/Exercitium2013.pdf][Exercitium (curso 2013-14)]] y está escrito mediante
 programación literaria en los siguiente directorios:
 + [[./texto][texto]] que contiene el código LaTeX para producir el libro y el libro
